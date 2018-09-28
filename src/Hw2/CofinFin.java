@@ -256,11 +256,7 @@ Team members:
       // this is not modified;
       
       // for the compiler
-      if( n < 0 || (complement && finite.contains(n)) || (!complement && !finite.contains(n))) {
-         return false;
-      } else {
-         return true;
-      }
+      return (!( n < 0 || (complement && finite.contains(n)) || (!complement && !finite.contains(n))));
 
     }
 
@@ -311,12 +307,7 @@ Team members:
       // returns true exactly when other and this represent the same set;
       
 
-
-      if((this.complement && other.complement) || (!this.complement && !other.complement)) {
-         return this.finite.equals(other.finite);
-      }else{
-         return false;
-      }
+      return (this.complement == other.complement) && this.finite.equals(other.finite);
 
    }
   
